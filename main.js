@@ -9,7 +9,7 @@ function caesar13(inputStartWord) {
     const inputIsTypeofString = typeof inputStartWord === "string" ? true : false;
     return inputFilled && inputIsTypeofString ? encrypt(inputStartWord) : null;
   }
-
+  //test
   // const validationFilled = (inputStartWord) => inputStartWord !== "" ? true : false;
   // const validationString = (inputStartWord) => typeof inputStartWord === "string" ? true : false;
 
