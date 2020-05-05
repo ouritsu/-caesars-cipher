@@ -3,15 +3,10 @@
 function caesar13(inputStartWord) {
 
   function validationGate(inputStartWord) {
-    // const inputFilled = validationFilled(inputStartWord);
-    // const inputIsTypeofString = validationString(inputStartWord);
     const inputFilled = inputStartWord !== "" ? true : false;
     const inputIsTypeofString = typeof inputStartWord === "string" ? true : false;
     return inputFilled && inputIsTypeofString ? encrypt(inputStartWord) : null;
   }
-  //test
-  // const validationFilled = (inputStartWord) => inputStartWord !== "" ? true : false;
-  // const validationString = (inputStartWord) => typeof inputStartWord === "string" ? true : false;
 
   function encrypt(properInputStartWord) {
     const startWord = [...properInputStartWord];
@@ -30,7 +25,8 @@ function caesar13(inputStartWord) {
   const isDigital = (startCharCode) => startCharCode >= 48 && startCharCode <= 57;
   const isLowerOrUpper = (startCharCode) => startCharCode >= 97 ? true : false;
 
-  return validationGate(inputStartWord);
+  const startEncrytpOutputResult = validationGate(inputStartWord);
+  return startEncrytpOutputResult;
 }
 
 console.log(caesar13("AbcDfgh"));

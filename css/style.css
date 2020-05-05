@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@300&display=swap');
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  position: relative;
+  font-family: 'Open Sans Condensed', sans-serif;
+  /* do usunięcia */
+  background-color: #b5a78f;
+  color: #ffffff;
+}
+
+header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 0.5rem;
+  line-height: 2rem;
+}
+
+header h2 {
+  font-weight: 300;
+  font-size: 2rem;
+}
+
+main {
+  position: fixed;
+  background-color: #a39171;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40%;
+  min-width: 400px;
+  height: 100%;
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+}

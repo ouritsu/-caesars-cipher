@@ -5,13 +5,37 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
-  <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="/css/style.css">
 </head>
 
 <body>
 
+  <header>
+    <h2>ROT13</h2>
+  </header>
 
-  <script src="/main.js"></script>
+  <main class="encryptInterface">
+
+    <div class="whriteSentenceArea">
+      <label for="inputText">Whrite word to encode:</label>
+      <input type="text" id="inputText">
+      <button>Submit</button>
+    </div>
+
+    <div class="encryptedSentenceArea">
+      <label for="outputText">Encoded string:</label>
+      <input type="text">
+    </div>
+
+  </main>
+
+  <footer>
+    <h4>link github</h4>
+  </footer>
+  <script src="/js/encrypt.js"></script>
 </body>
 
 </html>
+
+<!-- <label for="name">Podaj swoje imię:</label> -->
+<!-- <input type="text" id="name"> -->
