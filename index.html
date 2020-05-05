@@ -17,25 +17,25 @@
   <main class="encryptInterface">
 
     <div class="whriteSentenceArea">
-      <label for="inputText">Whrite word to encode:</label>
-      <input type="text" id="inputText">
-      <button>Submit</button>
+      <input type="text" spellcheck="false" maxlength="20" placeholder="tape word here">
+    </div>
+
+    <div class="buttonArea">
+      <button class="button">START</button>
     </div>
 
     <div class="encryptedSentenceArea">
-      <label for="outputText">Encoded string:</label>
-      <input type="text">
+      <input type="text" spellcheck="false" disabled="disabled" placeholder="encoded string">
     </div>
 
   </main>
 
   <footer>
-    <h4>link github</h4>
+    <a target="_blank" href="https://github.com/ouritsu/-caesars-cipher">
+      <h4>link github</h4>
+    </a>
   </footer>
   <script src="/js/encrypt.js"></script>
 </body>
 
 </html>
-
-<!-- <label for="name">Podaj swoje imię:</label> -->
-<!-- <input type="text" id="name"> -->
