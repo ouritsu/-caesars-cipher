@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
 
 :root {
   --main-background-color: #a39171;
@@ -22,11 +23,13 @@ header {
   position: absolute;
   top: 0;
   left: 0;
-  padding: 0.5rem;
-  line-height: 2rem;
+  line-height: 1rem;
+  z-index: 1;
 }
 
 header h2 {
+  font-family: 'VT323', monospace;
+  margin: 5px;
   font-weight: 300;
   font-size: 2rem;
   cursor: default;
@@ -108,7 +111,6 @@ main input {
   background-color: var(--main-background-color);
   color: white;
   border: none;
-  border-bottom: 2px 2px solid white;
   text-align: center;
   font-size: 1.6rem;
   font-family: 'Open Sans Condensed', sans-serif;

@@ -25,13 +25,15 @@ function caesar13(inputStartWord) {
   const isDigital = (startCharCode) => startCharCode >= 48 && startCharCode <= 57;
   const isLowerOrUpper = (startCharCode) => startCharCode >= 97 ? true : false;
 
-  const startEncrytpOutputResult = validationGate(inputStartWord);
+  const startEncrytpOutputResult = validationGate(inputStartWord).join('');
   return startEncrytpOutputResult;
 }
 
+export default caesar13;
+
 console.log(caesar13("AbcDfgh"));
 console.log(caesar13("Superman33"));
-console.log(caesar13(""));
-console.log(caesar13(997));
+// console.log(caesar13(""));
+// console.log(caesar13(997));
 
 // caesar13();
