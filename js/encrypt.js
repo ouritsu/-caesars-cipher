@@ -17,6 +17,7 @@ function caesar13(inputStartWord) {
   }
 
   const add13 = (startCharCode) => {
+    // debugger;
     const checkDigital = isDigital(startCharCode) ? startCharCode : false;
     const result = isLowerOrUpper(startCharCode) ? (97 + ((startCharCode + 13) - 97) % 26) : (65 + ((startCharCode + 13) - 65) % 26);
     return checkDigital || result;

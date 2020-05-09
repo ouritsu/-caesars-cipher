@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/ouritsu/-caesars-cipher/issues"
   },
-  "homepage": "https://github.com/ouritsu/-caesars-cipher#readme"
+  "homepage": "https://github.com/ouritsu/-caesars-cipher#readme",
+  "dependencies": {
+    "howler": "^2.1.3"
+  }
 }
