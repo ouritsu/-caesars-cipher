@@ -3,9 +3,14 @@
 function caesar13(inputStartWord) {
 
   function validationGate(inputStartWord) {
-    const inputFilled = inputStartWord !== "" ? true : false;
-    const inputIsTypeofString = typeof inputStartWord === "string" ? true : false;
-    return inputFilled && inputIsTypeofString ? encrypt(inputStartWord) : null;
+    // console.log(inputStartWord)
+    // if (inputStartWord === "") {
+    //   throw new Error('empty input');
+    // }
+    if (!new RegExp(/^[a-zA-Z0-9/?]*$/g).test(inputStartWord)) {
+      throw new Error('invalid chars');
+    }
+    return encrypt(inputStartWord);
   }
 
   function encrypt(properInputStartWord) {
@@ -17,7 +22,6 @@ function caesar13(inputStartWord) {
   }
 
   const add13 = (startCharCode) => {
-    // debugger;
     const checkDigital = isDigital(startCharCode) ? startCharCode : false;
     const result = isLowerOrUpper(startCharCode) ? (97 + ((startCharCode + 13) - 97) % 26) : (65 + ((startCharCode + 13) - 65) % 26);
     return checkDigital || result;
@@ -25,7 +29,6 @@ function caesar13(inputStartWord) {
 
   const isDigital = (startCharCode) => startCharCode >= 48 && startCharCode <= 57;
   const isLowerOrUpper = (startCharCode) => startCharCode >= 97 ? true : false;
-
   const startEncrytpOutputResult = validationGate(inputStartWord).join('');
   return startEncrytpOutputResult;
 }
@@ -34,6 +37,7 @@ export default caesar13;
 
 console.log(caesar13("AbcDfgh"));
 console.log(caesar13("Superman33"));
+// console.log(caesar13("Supeąćźrman33"));
 // console.log(caesar13(""));
 // console.log(caesar13(997));
 
