@@ -1,5 +1,3 @@
-//Szyfr Cezara 
-
 function caesar13(inputStartWord) {
 
   function validationGate(inputStartWord) {
@@ -34,11 +32,3 @@ function caesar13(inputStartWord) {
 }
 
 export default caesar13;
-
-console.log(caesar13("AbcDfgh"));
-console.log(caesar13("Superman33"));
-// console.log(caesar13("Supeąćźrman33"));
-// console.log(caesar13(""));
-// console.log(caesar13(997));
-
-// caesar13();
