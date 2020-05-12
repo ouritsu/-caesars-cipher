@@ -26,4 +26,4 @@ function caesar13(inputStartWord) {
   return startEncrytpOutputResult;
 }
 
-export default caesar13;
+export { caesar13 };
