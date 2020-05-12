@@ -1,4 +1,4 @@
-import encrypter from './encrypt';
+import encrypter from 'js/encrypt';
 
 const inputResultWord = document.querySelector(".encryptedSentenceArea input");
 const messageOutputArea = document.querySelector(".message");
