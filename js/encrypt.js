@@ -1,13 +1,8 @@
 function caesar13(inputStartWord) {
 
   function validationGate(inputStartWord) {
-    // console.log(inputStartWord)
-    // if (inputStartWord === "") {
-    //   throw new Error('empty input');
-    // }
-    if (!new RegExp(/^[a-zA-Z0-9/?]*$/g).test(inputStartWord)) {
-      throw new Error('invalid chars');
-    }
+    if (inputStartWord === '') throw new Error('empty input');
+    if (!new RegExp(/^[a-zA-Z0-9/?]*$/g).test(inputStartWord)) throw new Error('invalid chars');
     return encrypt(inputStartWord);
   }
 

@@ -1,56 +1,66 @@
 import encrypter from './encrypt';
 
-const inputUserWord = document.querySelector(".whriteSentenceArea input");
-const button = document.querySelector(".button");
 const inputResultWord = document.querySelector(".encryptedSentenceArea input");
 const messageOutputArea = document.querySelector(".message");
 
 let messageToUser = document.querySelector('div p');
 
-button.addEventListener("click", () => {
-  // messageOutputArea.style.display = "none";
-  if (button.innerHTML === "CLEAR") {
+const button = document.querySelector(".button");
+button.addEventListener("click", startEncrypter);
+
+const inputUserWord = document.querySelector(".whriteSentenceArea input");
+inputUserWord.addEventListener("keyup", event => {
+  if (event.keyCode === 13) startEncrypter();
+});
+
+function startEncrypter() {
+
+  const wordToEncrypt = inputUserWord.value;
+
+  function clearInputsAndErrors() {
+    button.textContent = "START";
     inputUserWord.value = "";
-    messageOutputArea.style.left = "calc(50% - 200px)";
+    messageOutputArea.classList.remove('displayError');
     inputUserWord.readOnly = false;
     inputResultWord.value = "";
-    button.textContent = "START";
-    return;
-    // if (inputUserWord.value = "") {
-    // messageToUser.innerHTML = new Error('empty input').message.toUpperCase();
-    // messageOutputArea.style.left = "calc(50%)"
-    // }
+    inputUserWord.focus();
   }
 
-  function resetInputString() {
-    messageOutputArea.classList.remove('showMessage');
-    messageToUser.innerHTML = "";
-    inputUserWord.value = "";
+  function afterError() {
+    messageOutputArea.classList.add('displayError');
     inputResultWord.value = "";
-    button.textContent = "START";
-    messageToUser.innerHTML = new Error('empty input').message.toUpperCase();
-    messageOutputArea.style.left = "calc(50%)"
+    inputUserWord.focus();
+    if (wordToEncrypt) button.textContent = "CLEAR";
+  }
+
+  function emptyInput() {
+    inputUserWord.readOnly = false;
   }
 
   function useEncrypter() {
-    messageOutputArea.style.left = "calc(50% - 200px)";
-    try {
-      const userWord = inputUserWord.value;
-      const encryptedWord = encrypter(userWord);
-      console.log(encryptedWord)
-      inputResultWord.value = encryptedWord;
-      console.log(inputResultWord.value);
-      messageOutputArea.classList.remove('showMessage');
-      inputUserWord.readOnly = true;
-
-    } catch (e) {
-      messageToUser.innerHTML = e.message.toUpperCase();
-      messageOutputArea.style.left = "calc(50%)";
-      inputUserWord.readOnly = true;
-    }
+    messageOutputArea.classList.remove('displayError');
     button.textContent = "CLEAR";
+    inputResultWord.value = encrypter(wordToEncrypt);
   }
 
-  inputUserWord.value ? useEncrypter() : resetInputString();
+  if (button.innerHTML === "CLEAR") {
+    clearInputsAndErrors();
+    return;
+  }
 
-})
+  try {
+    encrypter(wordToEncrypt);
+  } catch (error) {
+    messageToUser.innerHTML = error.message.toUpperCase();
+    afterError();
+    return;
+  }
+
+  if (wordToEncrypt) {
+    useEncrypter();
+  }
+
+  if (!wordToEncrypt) {
+    emptyInput();
+  }
+}

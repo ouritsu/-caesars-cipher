@@ -166,3 +166,7 @@ a {
   transition: 0.5s;
   z-index: -1;
 }
+
+.displayError {
+  left: calc(50%);
+}
